@@ -15,6 +15,8 @@ console.clear();
 
 // runFlipMe()
 
+//
+
 
 function TestCase(input, output) {
     this.input = input
@@ -51,4 +53,13 @@ function runFlipMe() {
         new TestCase(['100.2', '200.1'], ['200.1', '100.2'])
     ]
     runTests("One", testCases, flipNumbers)
+}
+
+function runMagicNumber(){
+    let testCases = [
+        new TestCase([7,2,3,4,8,6,7], 2),
+        new TestCase([1,2,2,1,1,9], 10)
+    ]
+
+    runTests("Two", testCases, magicNumber);
 }
