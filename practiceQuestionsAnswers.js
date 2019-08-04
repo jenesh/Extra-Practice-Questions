@@ -37,6 +37,22 @@ function flipNumbers(arr) {
 
 // runFlipMe()
 
+// Make a function called magicNumber that takes in an array of numbers and adds the first two, 
+//subtracts the third from the total, multiplies the 4th, divides the 5th, etc until you go
+// through the entire array and get a magic number!!
+
+//Sample Input: 
+//[7,2,3,4,8,6,7]
+
+//Sample Output:
+// 2
+
+//Code here.. 
+
+//runMagicNumber()
+
+//
+
 function magicNumber(arr){
     let determine = 0;
     let magicNumber = arr.reduce((num, current) => {
