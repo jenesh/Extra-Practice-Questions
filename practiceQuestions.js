@@ -1,4 +1,4 @@
-let assert = require('assert').strict;
+let assert = require('assert');
 console.clear();
 
 
