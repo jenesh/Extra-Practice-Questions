@@ -8,7 +8,7 @@ To use the repository simply:
 3. Then write `git clone` followed by the clone url from step 2
 4. After that `cd` followed by the folder name
 5. **Copy the `practiceQuestions.js` file into a new file with your name**
-> \> `cp practiceQuestions.js yourName.js`
+> cp 
 
 
 Make sure to read the comments regarded what to name your **functions** and to run the test simply uncomment out the function that is right under `Code here..` that starts with the word run, for example `runFlipMe`.
@@ -17,7 +17,7 @@ Make sure to read the comments regarded what to name your **functions** and to r
 
 ## Making contributions / Adding your Questions
 
-Everyone is welcome to create/add their own questions as well as the tests that corresponds with it. 
+Everyone is welcome to create/add their own questions as well as the tests that corresponds with. 
 
 ### Question format
 
@@ -28,10 +28,6 @@ To add your question make sure to write it in a clear format. Some of the things
 * Input Type (string, array, number, object etc.)
 * Output
 * Output Type (string, array, number, object etc.)
-* Certain methods to use or not to use for more of a challenge
-* Any hints you think might be needed to solve the problem
-
-> Always add your question(s) after the last question that appears which will be before the `function TestCase()`
 
 ### Making the Test
 
@@ -54,5 +50,3 @@ The key things you need to change are:
 1. Name of the function `function giveMeName()`
 2. All of the `new TestCase([...])` *(more on that below)*
 3. 
-
-TBC
