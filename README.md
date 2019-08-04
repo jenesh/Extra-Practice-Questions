@@ -67,7 +67,7 @@ The key things you need to change are:
 runTests("One", testCases, changeMe)
 ```
 
-#### Changing the Test Cases
+### Changing the Test Cases
 
 For the test cases the only thing you need to change are the parameters inside the TestCase().
 ``` js
@@ -76,6 +76,6 @@ TestCase( input, output )
 
 For input you can write any input values that you would pass into the function making sure the type is exactly the same as you intended it to be. Also, for the Output make sure the type will make the test pass. Best way to make sure the tests are valid is to solve the problem yourself and run the test with all tests resulting to a pass.
 
-### Final Words
+## Final Words
 
 Lastly, feel free to update ME meaning the README.md file for any errors or better explanations on the steps. This repository was made to help everybody in the class get better in javascipt. Feel free to put any questions you find *fun, easy, difficult etc.* to solve.
