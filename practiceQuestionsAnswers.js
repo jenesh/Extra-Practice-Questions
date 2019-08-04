@@ -1,4 +1,4 @@
-let assert = require('assert').strict;
+let assert = require('assert')
 console.clear();
 
 
@@ -37,7 +37,28 @@ function flipNumbers(arr) {
 
 // runFlipMe()
 
+function magicNumber(arr){
+    let determine = 0;
+    let magicNumber = arr.reduce((num, current) => {
+        switch(determine){
+            case 0: determine++; return num + current;
+            break
+            case 1: determine++; return num - current;
+            break
+            case 2: determine++; return num * current;
+            break
+            case 3: determine = 0; return num / current;
+            break
+        }
+    });
+    return magicNumber;
+}
 
+ runMagicNumber();
+
+ console.log(typeof magicNumber([7,2,3,4,8,6,7]));
+
+ 
 function TestCase(input, output) {
     this.input = input
     this.output = output
@@ -73,4 +94,13 @@ function runFlipMe() {
         new TestCase(['100.2', '200.1'], ['200.1', '100.2'])
     ]
     runTests("One", testCases, flipNumbers)
+}
+
+function runMagicNumber(){
+    let testCases = [
+        new TestCase([7,2,3,4,8,6,7], 2),
+        new TestCase([1,2,2,1,1,9], 10)
+    ]
+
+    runTests("Two", testCases, magicNumber);
 }
