@@ -8,10 +8,19 @@ To use the repository simply:
 3. Then write `git clone` followed by the clone url from step 2
 4. After that `cd` followed by the folder name
 5. **Copy the `practiceQuestions.js` file into a new file with your name**
-> \> `cp practiceQuestions.js yourName.js`
+``` js
+> cp practiceQuestions.js yourName.js
+```
 
 
-Make sure to read the comments regarded what to name your **functions** and to run the test simply uncomment out the function that is right under `Code here..` that starts with the word run, for example `runFlipMe`.
+Make sure to read the comments regarding what to name your **functions** and to run the test simply uncomment out the function that is right under 
+``` js 
+Code here..
+``` 
+that starts with the word run, for example 
+``` js
+runFlipMe();
+```
 
 > There may or may not be a difficulty label on the problems because difficulty is pretty abstract. 
 
@@ -53,13 +62,20 @@ function runFlipMe() {
 The key things you need to change are:
 1. Name of the function `function giveMeName()`
 2. All of the `new TestCase([...])` *(more on that below)*
-3. Lastly change the name of the function again with the same name as step 1 where it says changeMe `runTests("One", testCases, changeMe)`
+3. Lastly change the name of the function again with the same name as step 1 where it says changeMe 
+``` js
+runTests("One", testCases, changeMe)
+```
 
 #### Changing the Test Cases
 
 For the test cases the only thing you need to change are the parameters inside the TestCase().
-> `TestCase( input, output )`
+``` js
+TestCase( input, output )
+```
 
 For input you can write any input values that you would pass into the function making sure the type is exactly the same as you intended it to be. Also, for the Output make sure the type will make the test pass. Best way to make sure the tests are valid is to solve the problem yourself and run the test with all tests resulting to a pass.
 
-Lastly, feel free to update ME meaning the README.md file for any errors or better explanations on things. This repository was made to help everybody in the class get better in javascipt. Feel free to put any questions you find fun to solve, easy, difficult etc.
+### Final Words
+
+Lastly, feel free to update ME meaning the README.md file for any errors or better explanations on the steps. This repository was made to help everybody in the class get better in javascipt. Feel free to put any questions you find *fun, easy, difficult etc.* to solve.
