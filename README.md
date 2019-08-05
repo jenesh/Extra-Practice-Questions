@@ -60,7 +60,7 @@ To add your question make sure to write it in a clear format. Some of the things
 
 > Always add your question(s) after the last question that appears which will be before the `function TestCase()`
 
-***
+
 
 ## Making the Test
 
@@ -89,7 +89,6 @@ runTests("One", testCases, changeMe)
 
 ![You can do it](https://media.giphy.com/media/8FNlmNPDTo2wE/giphy.gif)
 
-***
 
 ## Changing the Test Cases
 
@@ -106,7 +105,7 @@ Also, for the Output make sure the type will make the test pass. Best way to mak
 * Write at least one TestCase() but do *try to add more than one* for **any niche cases** the function needs to solve.
 
 
-***
+
 
 ## Final Words
 
