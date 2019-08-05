@@ -6,7 +6,7 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 
 
 
-## To use the repository simply:
+## 🍰 To use the repository simply 🍰
 1. Fork this repository
 2. Grab the clone link
 3. Then write `git clone` followed by the clone url from step 2
@@ -25,7 +25,7 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 
 
 
-### Key things to note:
+### 📝 Key things to note 📝
 
 Make sure to read the comments regarding what to name your **functions** and to run the test simply uncomment out the function that is right under 
 ``` js 
@@ -46,7 +46,7 @@ runFlipMe();
 
 Everyone is welcome to create/add their own questions as well as the tests that corresponds with it. 
 
-## Question format
+## ❓ Question format ❓
 
 To add your question make sure to write it in a clear format. Some of the things to consider when writing your question are: 
 
@@ -62,7 +62,7 @@ To add your question make sure to write it in a clear format. Some of the things
 
 
 
-## Making the Test
+## 🧪 Making the Test 🧪
 
 To make your test simple copy and paste a any test that looks like:
 
@@ -90,7 +90,7 @@ runTests("One", testCases, changeMe)
 ![You can do it](https://media.giphy.com/media/8FNlmNPDTo2wE/giphy.gif)
 
 
-## Changing the Test Cases
+## 👀 Changing the Test Cases 👀
 
 For the test cases the only thing you need to change are the parameters inside the TestCase().
 ``` js
@@ -106,7 +106,7 @@ Also, for the Output make sure the type will make the test pass. Best way to mak
 
 ***
 
-# Final Words
+# 👏 Final Words 👏
 
 Lastly, feel free to update **ME** (meaning the *README.md* file) for any errors or better explanations on the steps. 
 
