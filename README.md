@@ -36,7 +36,7 @@ that starts with the word run, for example
 runFlipMe();
 ```
 
-> There may or may not be a difficulty label on the problems because difficulty is abstract since a easy question might be hard for someone else and visa-versa.
+> There may or may not be a difficulty label on the problems because difficulty is abstract since a easy question might be hard for someone else and vice-versa.
 
 ![So easy a caveman can do it](https://media.giphy.com/media/4up3aiyLlAxb2/giphy.gif)
 
