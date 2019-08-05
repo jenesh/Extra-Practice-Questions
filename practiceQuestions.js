@@ -1,9 +1,10 @@
 let assert = require('assert');
 console.clear();
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
 // Make a function called flipNumbers that takes in a number and flips
-// it around.
+// it around. (MEDIUM/HARD)
 
 // Sample Input:
 // ['880', '001', '12345', '0101']
@@ -15,8 +16,29 @@ console.clear();
 
 // runFlipMe()
 
-//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
+// Make a function called magicNumber that takes in an array of numbers and adds the first two,
+// subtracts the third from the total, multiplies the 4th, divides the 5th, etc until you go
+// through the entire array and get a magic number!! (MEDIUM)
+
+// Sample Input:
+// [7,2,3,4,8,6,7]
+
+// Sample Output:
+// 2
+
+// Code here..
+
+// runMagicNumber()
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+
+/*  -- EVERYTHING BELOW IS A TEST --
+    --  ADD QUESTIONS ABOVE THIS  -- 
+    --    ADD TESTS BELOW THIS    --
+*/
 
 function TestCase(input, output) {
     this.input = input
@@ -43,6 +65,11 @@ function runTests(questionNum, testCases, testCallback) {
         }
     }
 }
+
+/* 
+    --                DO NOT CHANGE THE TWO FUNCTIONS ABOVE THIS                    --
+    --   PROCEED TO ADD YOUR TEST FUNCTIONS AFTER THE LAST TEST FUNCTION BELOW THIS --
+*/
 
 function runFlipMe() {
     let testCases = [
