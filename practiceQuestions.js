@@ -3,8 +3,8 @@ console.clear();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
-// Make a function called flipNumbers that takes in a number and flips
-// it around. (MEDIUM/HARD)
+// Make a function called flipNumbers that takes in an array of strings
+// representing numbers and flips it around. (MEDIUM/HARD)
 
 // Sample Input:
 // ['880', '001', '12345', '0101']
@@ -36,7 +36,7 @@ console.clear();
 
 
 /*  -- EVERYTHING BELOW IS A TEST --
-    --  ADD QUESTIONS ABOVE THIS  -- 
+    --  ADD QUESTIONS ABOVE THIS  --
     --    ADD TESTS BELOW THIS    --
 */
 
@@ -66,7 +66,7 @@ function runTests(questionNum, testCases, testCallback) {
     }
 }
 
-/* 
+/*
     --                DO NOT CHANGE THE TWO FUNCTIONS ABOVE THIS                    --
     --   PROCEED TO ADD YOUR TEST FUNCTIONS AFTER THE LAST TEST FUNCTION BELOW THIS --
 */
