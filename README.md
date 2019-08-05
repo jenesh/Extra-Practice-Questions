@@ -21,6 +21,8 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 > mv test.js allSubmissions/
 ```
 
+> To stay up to date with the repository do a `git pull` before editing the files and before submitting your work.
+
 ![Cat typing](https://media.giphy.com/media/juSCTzqDAV1Xq/giphy.gif)
 
 ***
