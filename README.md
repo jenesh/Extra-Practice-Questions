@@ -4,7 +4,7 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 
 ![There's more?](https://media.giphy.com/media/l0Exdm9UbTHAFcJi0/giphy.gif)
 
-***
+
 
 ## To use the repository simply:
 1. Fork this repository
@@ -23,7 +23,7 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 
 ![Cat typing](https://media.giphy.com/media/juSCTzqDAV1Xq/giphy.gif)
 
-***
+
 
 ### Key things to note:
 
@@ -104,10 +104,9 @@ Also, for the Output make sure the type will make the test pass. Best way to mak
 * The test cases only takes in one parameter right now so be make sure to solve the problem it only takes in **one parameter**.
 * Write at least one TestCase() but do *try to add more than one* for **any niche cases** the function needs to solve.
 
+***
 
-
-
-## Final Words
+# Final Words
 
 Lastly, feel free to update **ME** (meaning the *README.md* file) for any errors or better explanations on the steps. 
 
