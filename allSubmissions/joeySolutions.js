@@ -1,3 +1,8 @@
+// JOSEPH P. PASAOA
+//
+
+
+
 let assert = require('assert');
 console.clear();
 
@@ -13,8 +18,28 @@ console.clear();
 // ['088', '100', '54321', '1010']
 
 // Code here..
+function flipNumbers (strArr) {
+  return strArr.map( function(str) {
+    let inputStr = str.split('');
+    let preOutputStr = [];
+    let whereHasDecimal;
+    for (let i = inputStr.length; i >= 0; i--) {
+      if (inputStr[i] === "-") {
+        preOutputStr.unshift("-");
+      } else if (inputStr[i] === ".") {
+        whereHasDecimal = i + 1;
+      } else {
+        preOutputStr.push(inputStr[i]);
+      }
+    };
+    if (whereHasDecimal) {
+      preOutputStr.splice(whereHasDecimal, 0, ".");
+    }
+    return preOutputStr.join('');
+  } );
+}
 
-// runFlipMe()
+runFlipMe()
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
@@ -29,8 +54,24 @@ console.clear();
 // 2
 
 // Code here..
+const magicNumber = (numArr) => {
+  let output = numArr[0];
+  for (let i = 1; i < numArr.length; i += 4) {
+    output = output + numArr[i];
+    if (numArr[i+1]) {
+      output = output - numArr[i + 1];
+    }
+    if (numArr[i+2]) {
+      output = output * numArr[i + 2];
+    }
+    if (numArr[i+3]) {
+      output = output / numArr[i + 3];
+    }
+  }
+  return output;
+}
 
-// runMagicNumber()
+runMagicNumber()
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
@@ -85,10 +126,7 @@ function runFlipMe() {
 function runMagicNumber(){
     let testCases = [
         new TestCase([7,2,3,4,8,6,7], 2),
-        new TestCase([1,2,2,1,1,9], 10),
-        new TestCase([-2,8,4,12,6,-8,3,-7], 49),
-        new TestCase([0.3,0.7,3,5,0.25,42,1], 1),
-        new TestCase([1,0,0,1,1, 1,0,0,1, 0,1,0,1, 1,0,0.5], 1)
+        new TestCase([1,2,2,1,1,9], 10)
     ]
 
     runTests("Two", testCases, magicNumber);
