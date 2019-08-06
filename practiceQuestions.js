@@ -85,7 +85,10 @@ function runFlipMe() {
 function runMagicNumber(){
     let testCases = [
         new TestCase([7,2,3,4,8,6,7], 2),
-        new TestCase([1,2,2,1,1,9], 10)
+        new TestCase([1,2,2,1,1,9], 10),
+        new TestCase([-2,8,4,12,6,-8,3,-7], 49),
+        new TestCase([0.3,0.7,3,5,0.25,42,1], 1),
+        new TestCase([1,0,0,1,1, 1,0,0,1, 0,1,0,1, 1,0,0.5], 1)
     ]
 
     runTests("Two", testCases, magicNumber);
