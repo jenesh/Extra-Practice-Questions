@@ -42,7 +42,7 @@ console.clear();
 // the category, see the output below for exact output requirement. (MEDIUM/HARD)
 
 // The output will be a string:
-// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49'
+// 'Your Total is $28.06. Toilet Paper 36pk => $19.99, Monster => $2.49, Avocado => $1.59, Ice Cream => $3.99'
 
 
 // let shoppingList = [
@@ -197,7 +197,7 @@ function runGrannysBill(){
                     discountType: 'Dollar',
                 }
             },
-        ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49')
+        ], 'Your Total is $28.06. Toilet Paper 36pk => $19.99, Monster => $2.49, Avocado => $1.59, Ice Cream => $3.99')
     ]
     runTests("Three", testCases, couponGranny);
 }
