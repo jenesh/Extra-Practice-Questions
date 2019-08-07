@@ -190,3 +190,51 @@ function runMagicNumber(){
 
     runTests("Two", testCases, magicNumber);
 }
+
+function runGrannysBill() {
+  let testCases = [
+    new TestCase([
+      {
+        item: 'Ice Cream',
+        category: 'Food',
+        price: 4.99,
+        coupon: {
+          valid: true,
+          discount: 1,
+          discountType: 'Dollar',
+        }
+      },
+      {
+        item: 'Avacado',
+        category: 'Food',
+        price: 1.99,
+        coupon: {
+          valid: true,
+          discount: 20,
+          discountType: 'Percent',
+        }
+      },
+      {
+        item: 'Toilet Paper 36pk',
+        category: 'Bathroom',
+        price: 19.99,
+        coupon: {
+          valid: false,
+          discount: 25,
+          discountType: 'Percent',
+        }
+      },
+      {
+        item: 'Monster',
+        category: 'Drink',
+        price: 2.99,
+        coupon: {
+          valid: true,
+          discount: .5,
+          discountType: 'Dollar',
+        }
+      },
+    ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49')
+  ]
+  runTests("Three", testCases, couponGranny);
+}
