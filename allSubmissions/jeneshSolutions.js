@@ -37,6 +37,18 @@ function flipNumbers(arr) {
 
 runFlipMe()
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+// Make a function called magicNumber that takes in an array of numbers and adds the first two,
+// subtracts the third from the total, multiplies the 4th, divides the 5th, etc until you go
+// through the entire array and get a magic number!! (MEDIUM)
+
+// Sample Input:
+// [7,2,3,4,8,6,7]
+
+// Sample Output:
+// 2
+
 function magicNumber(arr) {
     let determine = 0;
     let magicNumber = arr.reduce((num, current) => {
@@ -64,6 +76,17 @@ function magicNumber(arr) {
 
 runMagicNumber();
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+// Make a function called couponGranny which takes in an array with multiple objects
+// The objects have four properties with the last property being an object
+// Print out the wonderful granny's bill so she knows what she bought along with the price
+// she paid after discounts. The discounts only apply if they are valid. There are two coupon types
+// dollar amount and percent amount. Also, make sure the output is in alphabetical order based on 
+// the category, see the output below for exact output requirement. (MEDIUM/HARD)
+
+// The output will be a string:
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49'
 
 function couponGranny(arr) {
     let sortedArr = [arr[0]];
@@ -114,6 +137,7 @@ function couponGranny(arr) {
 
 runGrannysBill();
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
 
 function TestCase(input, output) {
