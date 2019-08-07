@@ -93,6 +93,64 @@ runMagicNumber()
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
+// Make a function called couponGranny which takes in an array with multiple objects
+// The objects have four properties with the last property being an object
+// Print out the wonderful granny's bills so she knows what she bought along with the price
+// she paid after discounts. The discounts only apply if they are valid. There are two coupon types
+// dollar amount and percent amount.  (MEDIUM/HARD)
+
+// The output will be:
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49'
+
+
+// let shoppingList = [
+//     {
+//         item: 'Ice Cream',
+//         category: 'Food',
+//         price: 4.99,
+//         coupon: {
+//             valid: true,
+//             discount: 1,
+//             discountType: 'Dollar',
+//         }
+//     },
+//     {
+//         item: 'Avacado',
+//         category: 'Food',
+//         price: 1.99,
+//         coupon: {
+//             valid: true,
+//             discount: 20,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Toilet Paper 36pk',
+//         category: 'Bathroom',
+//         price: 19.99,
+//         coupon: {
+//             valid: false,
+//             discount: 25,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Monster',
+//         category: 'Drink',
+//         price: 2.99,
+//         coupon: {
+//             valid: true,
+//             discount: .5,
+//             discountType: 'Dollar',
+//         }
+//     },
+// ];
+
+
+// runGrannysBill();
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
 
 /*  -- EVERYTHING BELOW IS A TEST --
     --  ADD QUESTIONS ABOVE THIS  --
