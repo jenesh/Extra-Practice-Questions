@@ -95,11 +95,12 @@ runMagicNumber()
 
 // Make a function called couponGranny which takes in an array with multiple objects
 // The objects have four properties with the last property being an object
-// Print out the wonderful granny's bills so she knows what she bought along with the price
+// Print out the wonderful granny's bill so she knows what she bought along with the price
 // she paid after discounts. The discounts only apply if they are valid. There are two coupon types
-// dollar amount and percent amount.  (MEDIUM/HARD)
+// dollar amount and percent amount. Also, make sure the output is in alphabetical order based on 
+// the category, see the output below for exact output requirement. (MEDIUM/HARD)
 
-// The output will be:
+// The output will be a string:
 // 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49'
 
 
@@ -146,6 +147,7 @@ runMagicNumber()
 //     },
 // ];
 
+// Code here..
 
 // runGrannysBill();
 
