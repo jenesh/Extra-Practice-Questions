@@ -34,6 +34,73 @@ console.clear();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
+// Make a function called couponGranny which takes in an array with multiple objects
+// The objects have four properties with the last property being an object
+// Print out the wonderful granny's bills so she knows what she bought along with the price
+// she paid after discounts.
+
+
+let shoppingList = [
+    {
+        item: 'Ice Cream',
+        category: 'Food',
+        price: 4.99,
+        coupon: {
+            valid: true,
+            discount: 1,
+            discountType: 'Dollar',
+        }
+    },
+    {
+        item: 'Avacado',
+        category: 'Food',
+        price: 1.99,
+        coupon: {
+            valid: true,
+            discount: 20,
+            discountType: 'Percent',
+        }
+    },
+    {
+        item: 'Toilet Paper 36pk',
+        category: 'Bathroom',
+        price: 19.99,
+        coupon: {
+            valid: false,
+            discount: 25,
+            discountType: 'Percent',
+        }
+    },
+    {
+        item: 'Monster',
+        category: 'Drink',
+        price: 2.99,
+        coupon: {
+            valid: true,
+            discount: .5,
+            discountType: 'Dollar',
+        }
+    },
+];
+
+function couponGranny(arr) {
+    let newArr = [];
+
+    for(let obj of arr) {
+        
+    }
+
+    return newArr.join(' ')
+}
+
+// console.log(shoppingList);
+
+// console.log(shoppingList);
+console.log(couponGranny(shoppingList));
+// runGrannysBill();
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
 
 /*  -- EVERYTHING BELOW IS A TEST --
     --  ADD QUESTIONS ABOVE THIS  --
@@ -61,7 +128,7 @@ function runTests(questionNum, testCases, testCallback) {
             console.log("An unexpected error occurred running the test")
             console.log(error)
         } else {
-            console.log(`\nTest failed.  Was expecting "${error.expected}", but got "${error.actual}"`)
+            console.log(`\n- Test Failed -\nWas expecting:\n> ${error.expected}, \nBut got: \n> ${error.actual}`)
         }
     }
 }
@@ -92,4 +159,16 @@ function runMagicNumber(){
     ]
 
     runTests("Two", testCases, magicNumber);
+}
+
+function runGrannysBill(){
+    let testCases = [
+        new TestCase([
+            {x: 'hello'},
+            {x: 'world'}
+        ], 
+        "Your Total is $100. Ice Cream => $3.99, Avacado => $1.59, Toilet Paper => $14.99, Monster => $2.49")   
+    ]
+
+    runTests("Three", testCases, couponGranny);
 }
