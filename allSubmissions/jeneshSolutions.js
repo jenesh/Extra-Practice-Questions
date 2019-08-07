@@ -37,6 +37,23 @@ function flipNumbers(arr) {
 
 runFlipMe()
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+// Make a function called magicNumber that takes in an array of numbers and adds the first two,
+// subtracts the third from the total, multiplies the 4th, divides the 5th, etc until you go
+// through the entire array and get a magic number!! (MEDIUM)
+
+// Sample Input:
+// [7,2,3,4,8,6,7]
+
+// Sample Output:
+// 2
+
+// Code here..
+
+// runMagicNumber()
+
+
 function magicNumber(arr) {
     let determine = 0;
     let magicNumber = arr.reduce((num, current) => {
@@ -64,6 +81,60 @@ function magicNumber(arr) {
 
 runMagicNumber();
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+// Make a function called couponGranny which takes in an array with multiple objects
+// The objects have four properties with the last property being an object
+// Print out the wonderful granny's bills so she knows what she bought along with the price
+// she paid after discounts. The discounts only apply if they are valid. There are two coupon types
+// dollar amount and percent amount.  (MEDIUM/HARD)
+
+// The output will be:
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49'
+
+
+// let shoppingList = [
+//     {
+//         item: 'Ice Cream',
+//         category: 'Food',
+//         price: 4.99,
+//         coupon: {
+//             valid: true,
+//             discount: 1,
+//             discountType: 'Dollar',
+//         }
+//     },
+//     {
+//         item: 'Avocado',
+//         category: 'Food',
+//         price: 1.99,
+//         coupon: {
+//             valid: true,
+//             discount: 20,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Toilet Paper 36pk',
+//         category: 'Bathroom',
+//         price: 19.99,
+//         coupon: {
+//             valid: false,
+//             discount: 25,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Monster',
+//         category: 'Drink',
+//         price: 2.99,
+//         coupon: {
+//             valid: true,
+//             discount: .5,
+//             discountType: 'Dollar',
+//         }
+//     },
+// ];
 
 function couponGranny(arr) {
     let sortedArr = [arr[0]];
@@ -100,15 +171,15 @@ function couponGranny(arr) {
             finalPrice.push(obj.price);
         }
     }
-    console.log('Final Price Array: ', finalPrice);
+    // console.log('Final Price Array: ', finalPrice);
     total = finalPrice.reduce((acc, num) => acc + num, 0);
-    console.log('Total price: ', total);
-    console.log('List of Products: ', product);
+    // console.log('Total price: ', total);
+    // console.log('List of Products: ', product);
     for (let i = 0; i < product.length; i++) {
         sentence += `${product[i]} => $${finalPrice[i]}, `;
     }
     sentence = `Your Total is $${total}. ` + sentence;
-    console.log("Output: ", sentence.slice(0, sentence.length - 2))
+    // console.log("Output: ", sentence.slice(0, sentence.length - 2))
     return sentence.slice(0, sentence.length - 2);
 }
 
@@ -131,13 +202,13 @@ function runTests(questionNum, testCases, testCallback) {
             console.log(`Running ${testCallback.name}(${testCase.formattedInput()})`)
             assert.strictEqual(JSON.stringify(testCallback(testCase.input)), JSON.stringify(testCase.output))
         }
-        console.log(`> All Questions for ${questionNum} passed!\n`)
+        console.log(`✅  All Questions for ${questionNum} passed! ✅\n`)
     } catch (error) {
         if (error.expected === undefined) {
-            console.log("An unexpected error occurred running the test")
+            console.log("⚠️ An unexpected error occurred running the test")
             console.log(error)
         } else {
-            console.log(`\nTest failed.  Was expecting "${error.expected}", but got "${error.actual}"`)
+            console.log(`\n❌  Test Failed ❌\nWas expecting:\n> ${error.expected} \nBut got: \n> ${error.actual}`)
         }
     }
 }
@@ -176,7 +247,7 @@ function runGrannysBill() {
                 }
             },
             {
-                item: 'Avacado',
+                item: 'Avocado',
                 category: 'Food',
                 price: 1.99,
                 coupon: {
@@ -205,7 +276,7 @@ function runGrannysBill() {
                     discountType: 'Dollar',
                 }
             },
-        ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49')
+        ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49')
     ]
     runTests("Three", testCases, couponGranny);
 }

@@ -83,7 +83,7 @@ runMagicNumber()
 // dollar amount and percent amount.  (MEDIUM/HARD)
 
 // The output will be:
-// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49'
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49'
 
 
 // let shoppingList = [
@@ -98,7 +98,7 @@ runMagicNumber()
 //         }
 //     },
 //     {
-//         item: 'Avacado',
+//         item: 'Avocado',
 //         category: 'Food',
 //         price: 1.99,
 //         coupon: {
@@ -155,15 +155,15 @@ function runTests(questionNum, testCases, testCallback) {
             console.log(`Running ${testCallback.name}(${testCase.formattedInput()})`)
             assert.strictEqual(JSON.stringify(testCallback(testCase.input)), JSON.stringify(testCase.output))
         }
-        console.log(`All Question ${questionNum} tests passed!\n`)
-    } catch (error) {
-        if (error.expected === undefined) {
-            console.log("An unexpected error occurred running the test")
-            console.log(error)
-        } else {
-            console.log(`\nTest failed.  Was expecting "${error.expected}", but got "${error.actual}"`)
-        }
+    console.log(`✅  All Questions for ${questionNum} passed! ✅\n`)
+  } catch (error) {
+    if (error.expected === undefined) {
+      console.log("⚠️ An unexpected error occurred running the test")
+      console.log(error)
+    } else {
+      console.log(`\n❌  Test Failed ❌\nWas expecting:\n> ${error.expected} \nBut got: \n> ${error.actual}`)
     }
+  }
 }
 
 /*
@@ -205,7 +205,7 @@ function runGrannysBill() {
         }
       },
       {
-        item: 'Avacado',
+        item: 'Avocado',
         category: 'Food',
         price: 1.99,
         coupon: {
@@ -234,7 +234,7 @@ function runGrannysBill() {
           discountType: 'Dollar',
         }
       },
-    ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49')
+    ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49')
   ]
   runTests("Three", testCases, couponGranny);
 }
