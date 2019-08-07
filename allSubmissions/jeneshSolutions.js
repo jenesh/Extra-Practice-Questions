@@ -65,6 +65,55 @@ function magicNumber(arr) {
 runMagicNumber();
 
 
+function couponGranny(arr) {
+    let sortedArr = [arr[0]];
+    let total;
+    let product = [];
+    let finalPrice = [];
+    let sentence = '';
+    for (let order of arr) {
+        for (let i = 0; i <= sortedArr.length; i++) {
+            // console.log(order.category)
+            if (order.item === sortedArr[i].item) {
+                break;
+            } else if (order.category[0] <= sortedArr[i].category[0]) {
+                sortedArr.splice(i, 0, order);
+                break;
+            } else {
+                sortedArr.push(order);
+                break;
+            }
+        }
+    }
+    // console.log(sortedArr);
+    for (let obj of sortedArr) {
+        product.push(obj.item)
+        if (obj.coupon.valid) {
+            if (obj.coupon.discountType === 'Dollar') {
+                finalPrice.push(obj.price - obj.coupon.discount);
+            } else if (obj.coupon.discountType === 'Percent') {
+                // console.log(19.99 * (100 - obj.coupon.discount)/100)
+                let afterDiscount = (obj.price * (100 - obj.coupon.discount) / 10).toFixed(2) * 1;
+                finalPrice.push(afterDiscount);
+            }
+        } else {
+            finalPrice.push(obj.price);
+        }
+    }
+    console.log('Final Price Array: ', finalPrice);
+    total = finalPrice.reduce((acc, num) => acc + num, 0);
+    console.log('Total price: ', total);
+    console.log('List of Products: ', product);
+    for (let i = 0; i < product.length; i++) {
+        sentence += `${product[i]} => $${finalPrice[i]}, `;
+    }
+    sentence = `Your Total is $${total}. ` + sentence;
+    console.log("Output: ", sentence.slice(0, sentence.length - 2))
+    return sentence.slice(0, sentence.length - 2);
+}
+
+runGrannysBill();
+
 
 
 function TestCase(input, output) {
@@ -111,4 +160,52 @@ function runMagicNumber() {
     ]
 
     runTests("Two", testCases, magicNumber);
+}
+
+function runGrannysBill() {
+    let testCases = [
+        new TestCase([
+            {
+                item: 'Ice Cream',
+                category: 'Food',
+                price: 4.99,
+                coupon: {
+                    valid: true,
+                    discount: 1,
+                    discountType: 'Dollar',
+                }
+            },
+            {
+                item: 'Avacado',
+                category: 'Food',
+                price: 1.99,
+                coupon: {
+                    valid: true,
+                    discount: 20,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Toilet Paper 36pk',
+                category: 'Bathroom',
+                price: 19.99,
+                coupon: {
+                    valid: false,
+                    discount: 25,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Monster',
+                category: 'Drink',
+                price: 2.99,
+                coupon: {
+                    valid: true,
+                    discount: .5,
+                    discountType: 'Dollar',
+                }
+            },
+        ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49')
+    ]
+    runTests("Three", testCases, couponGranny);
 }

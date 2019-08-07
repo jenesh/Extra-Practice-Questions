@@ -37,66 +37,57 @@ console.clear();
 // Make a function called couponGranny which takes in an array with multiple objects
 // The objects have four properties with the last property being an object
 // Print out the wonderful granny's bills so she knows what she bought along with the price
-// she paid after discounts.
+// she paid after discounts. The discounts only apply if they are valid. There are two coupon types
+// dollar amount and percent amount.  (MEDIUM/HARD)
+
+// The output will be:
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49'
 
 
-let shoppingList = [
-    {
-        item: 'Ice Cream',
-        category: 'Food',
-        price: 4.99,
-        coupon: {
-            valid: true,
-            discount: 1,
-            discountType: 'Dollar',
-        }
-    },
-    {
-        item: 'Avacado',
-        category: 'Food',
-        price: 1.99,
-        coupon: {
-            valid: true,
-            discount: 20,
-            discountType: 'Percent',
-        }
-    },
-    {
-        item: 'Toilet Paper 36pk',
-        category: 'Bathroom',
-        price: 19.99,
-        coupon: {
-            valid: false,
-            discount: 25,
-            discountType: 'Percent',
-        }
-    },
-    {
-        item: 'Monster',
-        category: 'Drink',
-        price: 2.99,
-        coupon: {
-            valid: true,
-            discount: .5,
-            discountType: 'Dollar',
-        }
-    },
-];
+// let shoppingList = [
+//     {
+//         item: 'Ice Cream',
+//         category: 'Food',
+//         price: 4.99,
+//         coupon: {
+//             valid: true,
+//             discount: 1,
+//             discountType: 'Dollar',
+//         }
+//     },
+//     {
+//         item: 'Avacado',
+//         category: 'Food',
+//         price: 1.99,
+//         coupon: {
+//             valid: true,
+//             discount: 20,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Toilet Paper 36pk',
+//         category: 'Bathroom',
+//         price: 19.99,
+//         coupon: {
+//             valid: false,
+//             discount: 25,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Monster',
+//         category: 'Drink',
+//         price: 2.99,
+//         coupon: {
+//             valid: true,
+//             discount: .5,
+//             discountType: 'Dollar',
+//         }
+//     },
+// ];
 
-function couponGranny(arr) {
-    let newArr = [];
 
-    for(let obj of arr) {
-        
-    }
-
-    return newArr.join(' ')
-}
-
-// console.log(shoppingList);
-
-// console.log(shoppingList);
-console.log(couponGranny(shoppingList));
 // runGrannysBill();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
@@ -128,7 +119,7 @@ function runTests(questionNum, testCases, testCallback) {
             console.log("An unexpected error occurred running the test")
             console.log(error)
         } else {
-            console.log(`\n- Test Failed -\nWas expecting:\n> ${error.expected}, \nBut got: \n> ${error.actual}`)
+            console.log(`\n- Test Failed -\nWas expecting:\n> ${error.expected} \nBut got: \n> ${error.actual}`)
         }
     }
 }
@@ -164,11 +155,47 @@ function runMagicNumber(){
 function runGrannysBill(){
     let testCases = [
         new TestCase([
-            {x: 'hello'},
-            {x: 'world'}
-        ], 
-        "Your Total is $100. Ice Cream => $3.99, Avacado => $1.59, Toilet Paper => $14.99, Monster => $2.49")   
+            {
+                item: 'Ice Cream',
+                category: 'Food',
+                price: 4.99,
+                coupon: {
+                    valid: true,
+                    discount: 1,
+                    discountType: 'Dollar',
+                }
+            },
+            {
+                item: 'Avacado',
+                category: 'Food',
+                price: 1.99,
+                coupon: {
+                    valid: true,
+                    discount: 20,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Toilet Paper 36pk',
+                category: 'Bathroom',
+                price: 19.99,
+                coupon: {
+                    valid: false,
+                    discount: 25,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Monster',
+                category: 'Drink',
+                price: 2.99,
+                coupon: {
+                    valid: true,
+                    discount: .5,
+                    discountType: 'Dollar',
+                }
+            },
+        ], 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avacado => $15.92, Ice Cream => $3.99, Monster => $2.49')
     ]
-
     runTests("Three", testCases, couponGranny);
 }
