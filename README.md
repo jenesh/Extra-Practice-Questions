@@ -21,6 +21,11 @@ This repositroy was created for anyone looking for more *fun* practice problems 
 > mv test.js allSubmissions/
 ```
 
+### ❗️❗️❗️ To stay up to date with the repository ❗️❗️❗️
+
+**Do a `git pull` before editing the files and before submitting your work** 
+If it gives you an merge error go back to your files and accept current/incoming changes if not sure **accept both** and edit your file afterwards. Don't forget to `git push` again after accepting changes.
+
 ![Cat typing](https://media.giphy.com/media/juSCTzqDAV1Xq/giphy.gif)
 
 
