@@ -1,5 +1,4 @@
 let assert = require('assert');
-console.clear();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
@@ -86,10 +85,110 @@ const magicNumber = (array) => {
   }
 runMagicNumber()
 
-//[1,0,0,1,1, = 1
-// 1 + 1,0,0,1 = 0
-// 0 + 0,1,0,1 = 0
-// 0 + 1,0,0.5 = 0.5
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
+// Make a function called couponGranny which takes in an array with multiple objects
+// The objects have four properties with the last property being an object
+// Print out the wonderful granny's bill so she knows what she bought along with the price
+// she paid after discounts. The discounts only apply if they are valid. There are two coupon types
+// dollar amount and percent amount. Also, make sure the output is in alphabetical order based on 
+// the category, see the output below for exact output requirement. (MEDIUM/HARD)
+
+// The output will be a string:
+// 'Your Total is $42.39. Toilet Paper 36pk => $19.99, Avocado => $15.92, Ice Cream => $3.99, Monster => $2.49'
+
+
+// let shoppingList = [
+//     {
+//         item: 'Ice Cream',
+//         category: 'Food',
+//         price: 4.99,
+//         coupon: {
+//             valid: true,
+//             discount: 1,
+//             discountType: 'Dollar',
+//         }
+//     },
+//     {
+//         item: 'Avocado',
+//         category: 'Food',
+//         price: 1.99,
+//         coupon: {
+//             valid: true,
+//             discount: 20,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Toilet Paper 36pk',
+//         category: 'Bathroom',
+//         price: 19.99,
+//         coupon: {
+//             valid: false,
+//             discount: 25,
+//             discountType: 'Percent',
+//         }
+//     },
+//     {
+//         item: 'Monster',
+//         category: 'Drink',
+//         price: 2.99,
+//         coupon: {
+//             valid: true,
+//             discount: .5,
+//             discountType: 'Dollar',
+//         }
+//     },
+// ];
+
+// Code here..
+const couponGranny = (arrayOfObjects) => {
+    let sortedCategories = (arrayOfObjects.map(object => object.category)).sort();
+    let sortedItems = (arrayOfObjects.map(object => object.item)).sort();
+    let singleSortedCategories = sortedCategories.reduce((arr, element) => {
+        if (!arr.includes(element)) {
+            arr.push(element);
+        }
+        return arr;
+    }, []); 
+    
+    let sortedArrayOfProducts = [];
+    for (let category of singleSortedCategories) {
+        for (let item of sortedItems) {
+            for (let object of arrayOfObjects) {
+                if (object.category === category && object.item === item) {
+                    sortedArrayOfProducts.push(object);
+                }
+            }
+        }
+    }
+    
+    let purchaceListArray = [];
+    let total = 0;
+    for (let item of sortedArrayOfProducts) {
+        let discountedPrice;
+        if (item.coupon.valid) {
+            if (item.coupon.discountType === 'Dollar') {
+                discountedPrice = item.price - item.coupon.discount;
+            }
+            if (item.coupon.discountType === 'Percent') {
+                discountedPrice = parseFloat((item.price * ((100 - item.coupon.discount) / 100)).toFixed(2));
+            }
+        } else {
+            discountedPrice = item.price;
+        }
+        purchaceListArray.push(`${item.item} => $${discountedPrice}`);
+        total += discountedPrice;
+    }
+
+    total = parseFloat(total.toFixed(2));
+    return `Your Total is $${total}. ${purchaceListArray.join(', ')}`
+}
+
+runGrannysBill();
+
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
@@ -174,6 +273,16 @@ function runTests(questionNum, testCases, testCallback) {
             console.log(`Running ${testCallback.name}(${testCase.formattedInput()})`)
             assert.strictEqual(JSON.stringify(testCallback(testCase.input)), JSON.stringify(testCase.output))
         }
+<<<<<<< HEAD
+        console.log(`✅  All Questions for ${questionNum} passed! ✅\n`)
+    } catch (error) {
+        if (error.expected === undefined) {
+            console.log("⚠️ An unexpected error occurred running the test")
+            console.log(error)
+        } else {
+            console.log(`\n❌  Test Failed ❌\nWas expecting:\n> ${error.expected} \nBut got: \n> ${error.actual}`)
+        }
+=======
     console.log(`✅  All Questions for ${questionNum} passed! ✅\n`)
   } catch (error) {
     if (error.expected === undefined) {
@@ -181,6 +290,7 @@ function runTests(questionNum, testCases, testCallback) {
       console.log(error)
     } else {
       console.log(`\n❌  Test Failed ❌\nWas expecting:\n> ${error.expected} \nBut got: \n> ${error.actual}`)
+>>>>>>> c6498071f0bff9ada2ec774f92175cdf5ba6a86b
     }
   }
 }
@@ -213,6 +323,55 @@ function runMagicNumber(){
     runTests("Two", testCases, magicNumber);
 }
 
+<<<<<<< HEAD
+function runGrannysBill(){
+    let testCases = [
+        new TestCase([
+            {
+                item: 'Ice Cream',
+                category: 'Food',
+                price: 4.99,
+                coupon: {
+                    valid: true,
+                    discount: 1,
+                    discountType: 'Dollar',
+                }
+            },
+            {
+                item: 'Avocado',
+                category: 'Food',
+                price: 1.99,
+                coupon: {
+                    valid: true,
+                    discount: 20,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Toilet Paper 36pk',
+                category: 'Bathroom',
+                price: 19.99,
+                coupon: {
+                    valid: false,
+                    discount: 25,
+                    discountType: 'Percent',
+                }
+            },
+            {
+                item: 'Monster',
+                category: 'Drink',
+                price: 2.99,
+                coupon: {
+                    valid: true,
+                    discount: .5,
+                    discountType: 'Dollar',
+                }
+            },
+        ], 'Your Total is $28.06. Toilet Paper 36pk => $19.99, Monster => $2.49, Avocado => $1.59, Ice Cream => $3.99')
+    ]
+    runTests("Three", testCases, couponGranny);
+}
+=======
 function runGrannysBill() {
   let testCases = [
     new TestCase([
@@ -260,3 +419,4 @@ function runGrannysBill() {
   ]
   runTests("Three", testCases, couponGranny);
 }
+>>>>>>> c6498071f0bff9ada2ec774f92175cdf5ba6a86b
