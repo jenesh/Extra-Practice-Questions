@@ -94,6 +94,21 @@ console.clear();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
+// Given an array A = [2, 3, 1] where every number `k` represents a soldier and his/her
+// military rank. Soldiers can report to only a superior solider of rank `k` + 1.
+// Write a function `findNumberOfReports` that returns the number of soldiers that 
+// can report to a superior.
+// - Given A = [2, 3, 1], the answer is 2 because soldier 1 can report to soldier 2
+// and soldier 2 can report to soldier 3
+// - Given A = [4, 0, 5], the answer is 1 because soldier 4 can report to soldier 5
+// - Given A = [0, 4, 6], the answer is 0 because no soldier can report to any other soldier
+
+// Code here.
+
+// testFindNumberOfReports()
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
+
 
 /*  -- EVERYTHING BELOW IS A TEST --
     --  ADD QUESTIONS ABOVE THIS  --
@@ -200,4 +215,18 @@ function runGrannysBill(){
         ], 'Your Total is $28.06. Toilet Paper 36pk => $19.99, Monster => $2.49, Avocado => $1.59, Ice Cream => $3.99')
     ]
     runTests("Three", testCases, couponGranny);
+}
+
+function testFindNumberOfReports(){
+    let testCases = [
+        new TestCase([3, 2, 1], 2),
+        new TestCase([4, 0, 5], 1),
+        new TestCase([0, 6, 4], 0),
+        new TestCase([0, 0, 0, 1], 3),
+        new TestCase([0, 0, 0, 0, 2, 4, 6], 0),
+        new TestCase([2, 4, 6, 8], 0),
+        new TestCase([2, 4, 3, 5, 6, 9, 8, 3], 6)
+    ]
+
+    runTests("Two", testCases, findNumberOfReports);
 }
