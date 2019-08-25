@@ -14,7 +14,27 @@ console.clear();
 
 // Code here..
 
-// runFlipMe()
+const flipNumString = (numStr) => {
+    const arr = numStr.split('');
+    for(let i = 0, j = arr.length - 1; i < Math.floor(arr.length / 2); i++, j--) {
+        if (arr[i] !== '.' && arr[j] !== '.') {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    return arr.join('')
+}
+
+const flipNumbers = (numbers) => numbers.map(n => {
+    let parsed = parseInt(n)
+    if (parsed > 0) {
+        return flipNumString(n);
+    }
+    return "-" + flipNumString(n.slice(1))
+})
+    
+runFlipMe()
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - //
 
@@ -148,6 +168,7 @@ function runTests(questionNum, testCases, testCallback) {
 
 function runFlipMe() {
     let testCases = [
+        new TestCase(['23', '32'], ['32', '23']),
         new TestCase(['123', '321'], ['321', '123']),
         new TestCase(['010', '099'], ['010', '990']),
         new TestCase(['101', '202'], ['101', '202']),
